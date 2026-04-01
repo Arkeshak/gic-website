@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Pass FAQ - GIC Sri Lanka</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <div class="top-bar-left">
+                    <span class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                    <span class="hotline-text">GOV HOTLINE:</span>
+                    <span class="hotline-number">1919</span>
+                    <span class="globe-icon"><i class="fa-solid fa-globe"></i></span>
+                    <span class="gov-text">SRI LANKA GOVERNMENT</span>
+                </div>
+                <div class="top-bar-right">
+                    <a href="#" class="lang-link">සිංහල</a>
+                    <span class="lang-divider">|</span>
+                    <a href="#" class="lang-link">தமிழ்</a>
+                    <span class="lang-divider">|</span>
+                    <a href="#" class="lang-link active">EN</a>
+                </div>
+            </div>
+        </div>
+        <div class="logo-bar">
+            <div class="container logo-bar-inner" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png" alt="Sri Lanka Emblem" class="emblem">
+                    <div class="logo-text">
+                        <h1>GIC</h1>
+                        <p>SRI LANKA</p>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <button class="btn-icon-outline"><i class="fa-regular fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content faq-page-bg">
+        <div class="container faq-container">
+            <!-- Header elements of FAQ page -->
+            <div class="faq-header text-center">
+                <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+                
+                <div class="status-indicator">
+                    <div class="badge-pill">
+                        <span class="dot-green"></span> Help Center
+                    </div>
+                </div>
+
+                <h2 class="faq-main-title">Fuel Pass FAQ</h2>
+                <p class="faq-subtitle">Find answers to frequently asked questions about the National Fuel Pass<br>system.</p>
+            </div>
+
+            <!-- FAQ List -->
+            <div class="faq-list">
+                <div class="faq-item">
+                    <span class="faq-text">1. Registered customer with valid CR (Certificate of Registration) + NIC + Revine Revenue license</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                
+                <div class="faq-item">
+                    <span class="faq-text">2. Unable to register a vehicle that is under a leasing company for a Fuel QR.</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-text">3. The QR code cannot be scanned at the fuel station and appears as blocked.</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-text">4. QR code or vehicle details cannot be verified in the system.</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-text">5. A three-wheel vehicle has a quota of 15L, but the QR code shows only 14L.</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-text">6. When logging in with the previous contact number, the system shows "Contact number not found or not valid."</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-text">7. Registration fails with the message: "This service is experiencing a temporary interruption. Please try again later."</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-text">8. How can 48cc unregistered motorcycles obtain a QR code?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-text">9. Logging in with a new contact number shows "Contact number not found or not valid."</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-text">10. The NIC number has not been registered before, but the system shows it as already...</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="chat-float">
+        <button class="btn-chat" onclick="openChat()">
+            <i class="fa-solid fa-comments"></i> Chat with GIC1919
+        </button>
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="chat-modal-overlay" id="chatModal">
+        <div class="chat-modal">
+            <div class="chat-modal-header">
+                <button class="chat-modal-close" onclick="closeChat()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-modal-body text-center">
+                <div class="chat-modal-logo">
+                    <div class="gic-circle">
+                        <span class="gic-1919">1919</span>
+                    </div>
+                </div>
+                
+                <h3 class="chat-modal-title">Please provide following details</h3>
+                
+                <form class="chat-form">
+                    <input type="text" placeholder="Name" class="chat-input">
+                    <input type="text" placeholder="Contact Number" class="chat-input">
+                    <select class="chat-input" required>
+                        <option value="" disabled selected>Select District</option>
+                        <option value="colombo">Colombo</option>
+                        <option value="gampaha">Gampaha</option>
+                        <option value="kalutara">Kalutara</option>
+                        <option value="kandy">Kandy</option>
+                        <!-- Other options identical to index.html omitted for brevity in auxiliary pages -->
+                    </select>
+                    
+                    <button type="button" class="btn btn-orange btn-full chat-btn-join">JOIN</button>
+                </form>
+                
+                <button class="btn-disclaimer">DISCLAIMER</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openChat() {
+            document.getElementById('chatModal').classList.add('active');
+        }
+        function closeChat() {
+            document.getElementById('chatModal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

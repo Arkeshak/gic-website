@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Complaint - GIC Sri Lanka</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <div class="top-bar-left">
+                    <span class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                    <span class="hotline-text">GOV HOTLINE:</span>
+                    <span class="hotline-number">1919</span>
+                    <span class="globe-icon"><i class="fa-solid fa-globe"></i></span>
+                    <span class="gov-text">SRI LANKA GOVERNMENT</span>
+                </div>
+                <div class="top-bar-right">
+                    <a href="#" class="lang-link">සිංහල</a>
+                    <span class="lang-divider">|</span>
+                    <a href="#" class="lang-link">தமிழ்</a>
+                    <span class="lang-divider">|</span>
+                    <a href="#" class="lang-link active">EN</a>
+                </div>
+            </div>
+        </div>
+        <div class="logo-bar">
+            <div class="container logo-bar-inner" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png" alt="Sri Lanka Emblem" class="emblem">
+                    <div class="logo-text">
+                        <h1>GIC</h1>
+                        <p>SRI LANKA</p>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <button class="btn-icon-outline"><i class="fa-regular fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content complaint-page-layout">
+        <div class="container complaint-container">
+            <div class="complaint-header text-center">
+                <h2 class="faq-main-title" style="margin-bottom: 25px;">Submit a Complaint</h2>
+                <p class="faq-subtitle" style="margin-bottom: 45px;">Use the button below to report fuel-related issues or grievances.</p>
+            </div>
+
+            <!-- Complaint Form Card -->
+            <div class="complaint-card">
+                <div class="complaint-card-header">
+                    <span class="badge-official">Official Form</span>
+                    <span class="badge-submission">SUBMISSION</span>
+                </div>
+                
+                <button class="btn-open-form">
+                    <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem;"></i> Open Complaint Form
+                </button>
+                
+                <a href="index.html" class="btn-back-home text-center">Back to Home</a>
+            </div>
+
+            <!-- Privacy Policy Card -->
+            <div class="privacy-card">
+                <h4 class="privacy-title">Government Information Center (GIC)</h4>
+                <p class="privacy-subtitle">Data Privacy Notice:</p>
+                <div class="privacy-content">
+                    <p>Your personal data is collected and processed in accordance with the Personal Data Protection Act, No. 9 of 2022. Data is used only for validation purposes. After verification, only the vehicle number will be retained and all other data will be securely deleted.</p>
+                    <p style="margin-top: 15px;">By sending your information, you consent to this process.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="chat-float">
+        <button class="btn-chat" onclick="openChat()">
+            <i class="fa-solid fa-comments"></i> Chat with GIC1919
+        </button>
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="chat-modal-overlay" id="chatModal">
+        <div class="chat-modal">
+            <div class="chat-modal-header">
+                <button class="chat-modal-close" onclick="closeChat()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-modal-body text-center">
+                <div class="chat-modal-logo">
+                    <div class="gic-circle">
+                        <span class="gic-1919">1919</span>
+                    </div>
+                </div>
+                
+                <h3 class="chat-modal-title">Please provide following details</h3>
+                
+                <form class="chat-form">
+                    <input type="text" placeholder="Name" class="chat-input">
+                    <input type="text" placeholder="Contact Number" class="chat-input">
+                    <select class="chat-input" required>
+                        <option value="" disabled selected>Select District</option>
+                        <option value="colombo">Colombo</option>
+                        <option value="gampaha">Gampaha</option>
+                    </select>
+                    
+                    <button type="button" class="btn btn-orange btn-full chat-btn-join">JOIN</button>
+                </form>
+                
+                <button class="btn-disclaimer">DISCLAIMER</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openChat() {
+            document.getElementById('chatModal').classList.add('active');
+        }
+        function closeChat() {
+            document.getElementById('chatModal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
