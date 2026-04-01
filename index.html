@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,12 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <header>
         <div class="top-bar">
@@ -33,9 +36,11 @@
             </div>
         </div>
         <div class="logo-bar">
-            <div class="container logo-bar-inner" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="container logo-bar-inner"
+                style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="logo-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png" alt="Sri Lanka Emblem" class="emblem">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png"
+                        alt="Sri Lanka Emblem" class="emblem">
                     <div class="logo-text">
                         <h1>GIC</h1>
                         <p>SRI LANKA</p>
@@ -50,17 +55,19 @@
 
     <main class="main-content">
         <!-- Background Grid handled via CSS on main-content -->
-        
+
         <section class="hero-section text-center">
             <div class="status-indicator">
                 <div class="status-dot"></div>
             </div>
             <h2 class="main-title">Government Information Center</h2>
-            <p class="subtitle">Browse FAQs to find answers to common questions about the Fuel QR<br>registration process.</p>
-            
+            <p class="subtitle">Browse FAQs to find answers to common questions about the Fuel QR<br>registration
+                process.</p>
+
             <div class="action-buttons">
                 <a href="faq.html" class="btn btn-orange btn-glow"><i class="fa-regular fa-circle-question"></i> FAQ</a>
-                <a href="complaints.html" class="btn btn-orange"><i class="fa-solid fa-triangle-exclamation"></i> COMPLAINTS</a>
+                <a href="complaints.html" class="btn btn-orange"><i class="fa-solid fa-triangle-exclamation"></i>
+                    COMPLAINTS</a>
                 <a href="contact.html" class="btn btn-orange"><i class="fa-regular fa-file-lines"></i> CONTACT GIC</a>
             </div>
         </section>
@@ -75,18 +82,27 @@
                 <div class="cards-grid-wrapper">
                     <div class="cards-grid" id="marqueeGrid">
                         <div class="notice-card yellow-card" onclick="openNoticeModal(this)">
-                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT QUOTA RESET NOTICE</h4>
-                            <p class="card-text"><strong>Fuel Pass quotas will reset at 12:00 AM (midnight) on Saturday.</strong></p>
+                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT
+                                QUOTA RESET NOTICE</h4>
+                            <p class="card-text"><strong>Fuel Pass quotas will reset at 12:00 AM (midnight) on
+                                    Saturday.</strong></p>
                         </div>
 
                         <div class="notice-card yellow-card" onclick="openNoticeModal(this)">
-                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT NEW NOTICE</h4>
-                            <p class="card-text"><strong>Citizens with valid documents can view and remove the previous owner's number to continue registration.</strong></p>
+                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT
+                                NEW NOTICE</h4>
+                            <p class="card-text"><strong>Citizens with valid documents can view and remove the previous
+                                    owner's number to continue registration.</strong></p>
                         </div>
 
                         <div class="notice-card yellow-card" onclick="openNoticeModal(this)">
-                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT SYSTEM USAGE NOTICE</h4>
-                            <p class="card-text"><strong>Misuse of the Fuel QR system, including fraudulent registrations, will lead to strict legal action under the Computer Crimes Act.</strong><br><br><span class="light-text">The public is advised to use only the official website, as the updated system supports re-registration for ownership changes and lost contact numbers.</span></p>
+                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT
+                                SYSTEM USAGE NOTICE</h4>
+                            <p class="card-text"><strong>Misuse of the Fuel QR system, including fraudulent
+                                    registrations, will lead to strict legal action under the Computer Crimes
+                                    Act.</strong><br><br><span class="light-text">The public is advised to use only the
+                                    official website, as the updated system supports re-registration for ownership
+                                    changes and lost contact numbers.</span></p>
                         </div>
                     </div>
                 </div>
@@ -95,7 +111,8 @@
                 <div class="notice-modal-overlay" id="importantNoticeModal">
                     <div class="notice-modal">
                         <div class="notice-modal-header">
-                            <button class="notice-modal-close" onclick="closeNoticeModal()"><i class="fa-solid fa-xmark"></i></button>
+                            <button class="notice-modal-close" onclick="closeNoticeModal()"><i
+                                    class="fa-solid fa-xmark"></i></button>
                         </div>
                         <div class="notice-modal-body" id="importantNoticeModalContent">
                             <!-- Injected content -->
@@ -106,32 +123,54 @@
                 <script>
                     document.addEventListener("DOMContentLoaded", () => {
                         const grid = document.getElementById('marqueeGrid');
-                        if(!grid) return;
-                        
+                        if (!grid) return;
+
                         let isPaused = false;
+                        let scrollPos = 0; // Track precise scroll position
+
+                        // Disable CSS features that interfere with JS scrolling
                         grid.style.scrollSnapType = 'none';
+                        grid.style.scrollBehavior = 'auto';
 
                         function startAutoScroll() {
                             if (!isPaused && grid) {
-                                grid.scrollLeft += 1;
-                                
+                                // Use a precise internal counter instead of grid.scrollLeft directly
+                                scrollPos += 1;
+                                grid.scrollLeft = scrollPos;
+
                                 const firstCard = grid.firstElementChild;
-                                if (firstCard && grid.scrollLeft >= (firstCard.offsetWidth + 20)) {
+                                // Use getBoundingClientRect for sub-pixel accuracy to prevent jumpiness
+                                const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 0;
+                                const totalWidth = cardWidth + 20; // width + gap
+
+                                if (firstCard && scrollPos >= totalWidth) {
                                     grid.appendChild(firstCard);
-                                    grid.scrollLeft -= (firstCard.offsetWidth + 20);
+                                    scrollPos -= totalWidth;
+                                    grid.scrollLeft = scrollPos;
                                 }
+                            } else if (grid && isPaused) {
+                                // Sync exact position if user scrolled manually while paused
+                                scrollPos = grid.scrollLeft;
                             }
                             requestAnimationFrame(startAutoScroll);
                         }
-                        
+
                         requestAnimationFrame(startAutoScroll);
 
                         grid.addEventListener('mouseenter', () => isPaused = true);
-                        grid.addEventListener('mouseleave', () => isPaused = false);
+                        grid.addEventListener('mouseleave', () => {
+                            isPaused = false;
+                            scrollPos = grid.scrollLeft;
+                        });
                         grid.addEventListener('touchstart', () => isPaused = true);
-                        grid.addEventListener('touchend', () => { setTimeout(() => isPaused = false, 2000); });
+                        grid.addEventListener('touchend', () => {
+                            setTimeout(() => {
+                                isPaused = false;
+                                scrollPos = grid.scrollLeft;
+                            }, 2000);
+                        });
 
-                        window.openNoticeModal = function(cardElement) {
+                        window.openNoticeModal = function (cardElement) {
                             isPaused = true;
                             const modal = document.getElementById('importantNoticeModal');
                             const modalContent = document.getElementById('importantNoticeModalContent');
@@ -139,10 +178,13 @@
                             modal.classList.add('active');
                         };
 
-                        window.closeNoticeModal = function() {
+                        window.closeNoticeModal = function () {
                             const modal = document.getElementById('importantNoticeModal');
                             modal.classList.remove('active');
-                            setTimeout(() => { isPaused = false; }, 500); 
+                            setTimeout(() => {
+                                isPaused = false;
+                                scrollPos = grid.scrollLeft;
+                            }, 500);
                         };
                     });
                 </script>
@@ -152,7 +194,9 @@
         <section class="special-notices-section" style="padding: 60px 0; background-color: transparent;">
             <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
                 <div class="section-header text-center" style="margin-bottom: 40px;">
-                    <h3 style="color: #1e3a8a; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">SPECIAL NOTICE</h3>
+                    <h3
+                        style="color: #1e3a8a; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">
+                        SPECIAL NOTICE</h3>
                     <div style="width: 30px; height: 3px; background-color: #3b82f6; margin: 8px auto 0;"></div>
                 </div>
 
@@ -188,15 +232,69 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>1</td><td>Car</td><td>15</td><td>25</td><td>10</td></tr>
-                                        <tr><td>2</td><td>3 Wheel</td><td>15</td><td>20</td><td>5</td></tr>
-                                        <tr><td>3</td><td>Van</td><td>40</td><td>50</td><td>10</td></tr>
-                                        <tr><td>4</td><td>Lorry</td><td>200</td><td>200</td><td>0</td></tr>
-                                        <tr><td>5</td><td>Bike</td><td>5</td><td>8</td><td>3</td></tr>
-                                        <tr><td>6</td><td>Bus</td><td>60</td><td>100</td><td>40</td></tr>
-                                        <tr><td>7</td><td>Quadricycle</td><td>5</td><td>8</td><td>3</td></tr>
-                                        <tr><td>8</td><td>Special Purpose<br>Vehicle</td><td>40</td><td>40</td><td>0</td></tr>
-                                        <tr><td>9</td><td>Land Vehicle</td><td>25</td><td>40</td><td>15</td></tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Car</td>
+                                            <td>15</td>
+                                            <td>25</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>3 Wheel</td>
+                                            <td>15</td>
+                                            <td>20</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Van</td>
+                                            <td>40</td>
+                                            <td>50</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Lorry</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Bike</td>
+                                            <td>5</td>
+                                            <td>8</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Bus</td>
+                                            <td>60</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Quadricycle</td>
+                                            <td>5</td>
+                                            <td>8</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Special Purpose<br>Vehicle</td>
+                                            <td>40</td>
+                                            <td>40</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Land Vehicle</td>
+                                            <td>25</td>
+                                            <td>40</td>
+                                            <td>15</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -222,11 +320,41 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>1</td><td>Octane 92 Petrol</td><td>317</td><td>+81</td><td>398</td></tr>
-                                        <tr><td>2</td><td>Octane 95 Petrol</td><td>365</td><td>+90</td><td>455</td></tr>
-                                        <tr><td>3</td><td>Auto Diesel</td><td>303</td><td>+79</td><td>382</td></tr>
-                                        <tr><td>4</td><td>Super Diesel</td><td>353</td><td>+90</td><td>443</td></tr>
-                                        <tr><td>5</td><td>Kerosene</td><td>195</td><td>+60</td><td>255</td></tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Octane 92 Petrol</td>
+                                            <td>317</td>
+                                            <td>+81</td>
+                                            <td>398</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Octane 95 Petrol</td>
+                                            <td>365</td>
+                                            <td>+90</td>
+                                            <td>455</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Auto Diesel</td>
+                                            <td>303</td>
+                                            <td>+79</td>
+                                            <td>382</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Super Diesel</td>
+                                            <td>353</td>
+                                            <td>+90</td>
+                                            <td>443</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Kerosene</td>
+                                            <td>195</td>
+                                            <td>+60</td>
+                                            <td>255</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -241,10 +369,19 @@
                                 <h4>SPECIAL NOTICE: NEW HOTLINE FOR RESOLVING ISSUES</h4>
                             </div>
                             <div style="color: #4b5563; font-size: 0.95rem; line-height: 1.6; font-weight: 600;">
-                                <p style="margin-bottom: 15px;">We wish to inform you that a dedicated support service has been launched to promptly resolve technical issues and registration difficulties faced by users of the National Fuel Pass system.</p>
-                                <p style="margin-bottom: 15px;">This service has been established to provide immediate assistance for any problems that may arise when registering your vehicle. If you encounter any issues during registration, please send a message via WhatsApp to <u style="text-decoration-thickness: 2px;"><strong>076 019 1919</strong></u> to receive support.</p>
-                                <p style="margin-bottom: 15px;">Through this service, you will be provided with the necessary guidance and technical assistance. You may also use this number to report any fraudulent activities or misuse of the system.</p>
-                                <p>We look forward to your cooperation in making the government's program of ensuring fair fuel distribution to all a success.</p>
+                                <p style="margin-bottom: 15px;">We wish to inform you that a dedicated support service
+                                    has been launched to promptly resolve technical issues and registration difficulties
+                                    faced by users of the National Fuel Pass system.</p>
+                                <p style="margin-bottom: 15px;">This service has been established to provide immediate
+                                    assistance for any problems that may arise when registering your vehicle. If you
+                                    encounter any issues during registration, please send a message via WhatsApp to <u
+                                        style="text-decoration-thickness: 2px;"><strong>076 019 1919</strong></u> to
+                                    receive support.</p>
+                                <p style="margin-bottom: 15px;">Through this service, you will be provided with the
+                                    necessary guidance and technical assistance. You may also use this number to report
+                                    any fraudulent activities or misuse of the system.</p>
+                                <p>We look forward to your cooperation in making the government's program of ensuring
+                                    fair fuel distribution to all a success.</p>
                             </div>
                         </div>
                     </div>
@@ -280,9 +417,9 @@
                         <span class="gic-1919">1919</span>
                     </div>
                 </div>
-                
+
                 <h3 class="chat-modal-title">Please provide following details</h3>
-                
+
                 <form class="chat-form">
                     <input type="text" placeholder="Name" class="chat-input">
                     <input type="text" placeholder="Contact Number" class="chat-input">
@@ -314,10 +451,10 @@
                         <option value="ratnapura">Ratnapura</option>
                         <option value="kegalle">Kegalle</option>
                     </select>
-                    
+
                     <button type="button" class="btn btn-orange btn-full chat-btn-join">JOIN</button>
                 </form>
-                
+
                 <button class="btn-disclaimer">DISCLAIMER</button>
             </div>
         </div>
@@ -332,4 +469,5 @@
         }
     </script>
 </body>
+
 </html>
