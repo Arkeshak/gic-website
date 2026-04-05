@@ -55,4 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
         touchendY = e.changedTouches[0].screenY;
         handleGesture();
     }, { passive: true });
+
+    // Set active state on bottom navigation
+    const footerLinks = document.querySelectorAll('.footer-inner a');
+    footerLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href !== '#' && href.includes(currentPage.replace('.html', ''))) {
+            link.classList.add('active');
+        } else if (href && href !== '#' && currentPage === '' && href === 'index.html') {
+            link.classList.add('active');
+        }
+    });
 });
