@@ -13,13 +13,17 @@
         rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Prevent FOUC for dark mode
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
 </head>
 
 <body>
     <header class="sticky-header">
         <div class="logo-bar">
-            <div class="container logo-bar-inner"
-                style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="container logo-bar-inner">
                 <div class="logo-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png"
                         alt="Sri Lanka Emblem" class="emblem">
@@ -513,6 +517,7 @@
     </footer>
 
     <script src="swipe-nav.js"></script>
+    <script src="theme-toggle.js"></script>
     <script>
         function openChat() {
             document.getElementById('chatModal').classList.add('active');

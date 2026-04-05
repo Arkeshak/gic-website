@@ -24,6 +24,39 @@
     --blue-border: #bfdbfe;
     
     --font-main: 'Inter', sans-serif;
+    
+    /* Variables that need explicit base colors to be overridden later */
+    --body-bg: var(--grid-bg);
+    --header-bg: #ffffff;
+    --logo-bar-bg: #ffffff;
+    --accordion-bg: #ffffff;
+    --card-bg: #ffffff;
+    --table-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --primary-blue: #3b82f6;      /* Bright blue for contrast against dark */
+    --text-dark: #f9fafb;         /* Very Light Gray */
+    --text-grey: #d1d5db;         /* Lighter Gray for body text */
+    --top-bar-bg: #111827;        /* Very Dark Slate */
+    --border-color: #374151;      /* Dark Gray Border */
+    --grid-bg: #1f2937;           /* Main Dark Background */
+    --grid-line: #374151;         /* Subtle Grid Lines */
+    
+    --card-yellow: #2d3748;       /* Dark Mode Card Background */
+    --card-yellow-border: #4a5568; 
+    --card-brown-text: #e2e8f0;
+    --card-yellow-gradient: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    
+    --table-stripe: #374151;
+    --blue-border: #4b5563;
+    
+    --body-bg: #111827;           /* App Base Dark */
+    --header-bg: #1f2937;
+    --logo-bar-bg: #1f2937;
+    --accordion-bg: #1f2937;
+    --card-bg: #1f2937;
+    --table-bg: #1f2937;
 }
 
 * {
@@ -35,9 +68,15 @@
 body {
     font-family: var(--font-main);
     color: var(--text-dark);
-    background-color: var(--grid-bg);
+    background-color: var(--body-bg);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Base generic transitions for theme toggle */
+.logo-bar, .sticky-header, .faq-item, .notice-card, .table-card, .faq-accordion-header, .accordion-header, .accordion-content, .faq-accordion-content, .styled-table th, .styled-table td {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 a {
@@ -64,12 +103,12 @@ ul {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #fff;
+    background-color: var(--header-bg);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 header {
-    background-color: #fff;
+    background-color: var(--header-bg);
     width: 100%;
 }
 
@@ -138,7 +177,13 @@ header {
 .logo-bar {
     border-bottom: 1px solid var(--border-color);
     padding: 15px 0;
-    background: #fff;
+    background: var(--logo-bar-bg);
+}
+
+.logo-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-container {
@@ -165,6 +210,26 @@ header {
     font-weight: 600;
     color: var(--text-grey);
     letter-spacing: 1px;
+}
+
+.theme-toggle .btn-icon-outline {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-dark);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle .btn-icon-outline:hover {
+    background-color: var(--border-color);
+    color: var(--primary-blue);
 }
 
 /* Main Content & Grid Background */
@@ -303,7 +368,7 @@ header {
 .important-notice-accordion-container {
     max-width: 800px;
     margin: 0 auto;
-    background: #ffffff;
+    background: var(--accordion-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
@@ -325,8 +390,8 @@ header {
 }
 
 .accordion-item {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
+    background: var(--accordion-bg);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     margin-bottom: 12px;
     transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
@@ -464,7 +529,7 @@ header {
 .table-card {
     flex: 0 0 calc(70% - 30px);
     scroll-snap-align: center;
-    background-color: #ffffff;
+    background-color: var(--table-bg);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
@@ -765,7 +830,7 @@ header {
 }
 
 .complaint-card {
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
@@ -1193,8 +1258,8 @@ header {
 }
 
 .styled-table tbody tr {
-    background-color: #ffffff;
-    border-bottom: 1px solid #f3f4f6;
+    background-color: var(--table-bg);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .styled-table tbody tr:last-child {
@@ -1223,8 +1288,8 @@ header {
 }
 
 .notice-tab {
-    background-color: #ffffff;
-    border: 2px solid #e5e7eb;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
     border-radius: 8px;
     padding: 12px 25px;
     font-size: 0.95rem;
@@ -1415,7 +1480,7 @@ header {
 .faq-main-title {
     font-size: 3.5rem;
     font-weight: 900;
-    color: #111827;
+    color: var(--text-dark);
     margin-bottom: 15px;
     letter-spacing: -0.02em;
 }
@@ -1436,9 +1501,9 @@ header {
 .faq-item {
     display: flex;
     flex-direction: column;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    background-color: #ffffff;
+    background-color: var(--accordion-bg);
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
     overflow: hidden;
     margin-bottom: 16px;
@@ -1462,19 +1527,19 @@ header {
 }
 
 .faq-accordion-header:hover {
-    background-color: #f8fafc;
+    background-color: var(--table-stripe);
 }
 
 .faq-accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #fafafa;
+    background-color: var(--table-stripe);
 }
 
 .faq-answer {
     padding: 0 30px 24px 30px;
-    color: #4b5563;
+    color: var(--text-grey);
     line-height: 1.6;
     margin: 0;
 }
