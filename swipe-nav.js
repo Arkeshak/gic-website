@@ -4,9 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    let touchstartX = 0;
+    let touchstartX = null;
     let touchendX = 0;
-    let touchstartY = 0;
+    let touchstartY = null;
     let touchendY = 0;
 
     const minSwipeDistance = 100; // Minimum distance to be considered a swipe
@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentIndex === -1) currentIndex = 0;
 
     function handleGesture() {
+        if (touchstartX === null || touchstartY === null) return;
+        
         const deltaX = touchendX - touchstartX;
         const deltaY = Math.abs(touchendY - touchstartY);
 
@@ -43,9 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
+        
+        // Reset tracking
+        touchstartX = null;
+        touchstartY = null;
     }
 
     document.addEventListener('touchstart', e => {
+        // Exclude elements that have native horizontal scrolling
+        const ignoreSwipe = e.target.closest('.styled-table-wrapper, .table-responsive, .special-notices-tabs, .tables-grid, .important-notice-accordion-container');
+        if (ignoreSwipe) {
+            touchstartX = null;
+            touchstartY = null;
+            return;
+        }
+
         touchstartX = e.changedTouches[0].screenX;
         touchstartY = e.changedTouches[0].screenY;
     }, { passive: true });
