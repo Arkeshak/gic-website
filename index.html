@@ -60,18 +60,33 @@
     <main class="main-content">
         <!-- Background Grid handled via CSS on main-content -->
 
-        <section class="hero-section text-center">
-            <div class="status-indicator">
+        <section class="hero-section text-center"
+            style="min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 0;">
+            <div class="status-indicator" style="margin-bottom: 20px;">
                 <div class="status-dot"></div>
             </div>
-            <h2 class="main-title">Government Information Center</h2>
-            <p class="subtitle">Browse FAQs to find answers to common questions about the Fuel QR<br>registration
-                process.</p>
+            <h2 class="main-title" style="font-size: 4rem; text-align: center; margin-bottom: 20px; line-height: 1.1;">
+                Government Information Center</h2>
+            <p class="subtitle"
+                style="font-size: 1.3rem; text-align: center; max-width: 800px; margin-bottom: 40px; margin-left: auto; margin-right: auto;">
+                Browse FAQs to find answers to common questions about the Fuel QR<br>registration process.</p>
 
+            <div class="action-buttons" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 30px;">
+                <a href="javascript:void(0)" onclick="showSection('important-notices')" class="btn btn-orange btn-glow"
+                    style="font-size: 1.1rem; padding: 15px 30px; text-decoration: none;">Important Notice</a>
+                <a href="javascript:void(0)" onclick="showSection('special-notices')" class="btn btn-orange btn-glow"
+                    style="font-size: 1.1rem; padding: 15px 30px; text-decoration: none; background-color: #3b82f6; box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4), 0 0 15px 5px rgba(59, 130, 246, 0.4);">Special
+                    Notice</a>
+            </div>
 
+            <div class="footer-text" style="font-size: 0.95rem; color: #6b7280; text-align: center; max-width: 600px;">
+                <p>This portal is designed to provide you with the latest updates and FAQs regarding government services
+                    and the Fuel QR registration process.</p>
+            </div>
         </section>
 
-        <section class="notices-section" id="important-notices">
+        <section class="notices-section" id="important-notices"
+            style="padding-top: 40px; scroll-margin-top: 150px; margin-bottom: 60px;">
             <div class="container">
                 <div class="section-header text-center">
                     <h3 class="section-title">IMPORTANT NOTICE</h3>
@@ -88,7 +103,8 @@
                             <i class="fa-solid fa-chevron-down accordion-icon"></i>
                         </button>
                         <div class="accordion-content">
-                            <p class="card-text">The system quota will reset at 12:00 AM on Saturday. Please complete pending actions before the reset.</p>
+                            <p class="card-text">The system quota will reset at 12:00 AM on Saturday. Please complete
+                                pending actions before the reset.</p>
                         </div>
                     </div>
 
@@ -101,7 +117,8 @@
                             <i class="fa-solid fa-chevron-down accordion-icon"></i>
                         </button>
                         <div class="accordion-content">
-                            <p class="card-text">Users can now update registration details using valid documents through the new portal.</p>
+                            <p class="card-text">Users can now update registration details using valid documents through
+                                the new portal.</p>
                         </div>
                     </div>
 
@@ -140,7 +157,8 @@
                             <i class="fa-solid fa-chevron-down accordion-icon"></i>
                         </button>
                         <div class="accordion-content">
-                            <p class="card-text">Some services may be temporarily unavailable due to system upgrades.</p>
+                            <p class="card-text">Some services may be temporarily unavailable due to system upgrades.
+                            </p>
                         </div>
                     </div>
 
@@ -153,7 +171,8 @@
                             <i class="fa-solid fa-chevron-down accordion-icon"></i>
                         </button>
                         <div class="accordion-content">
-                            <p class="card-text">Users are advised to update passwords regularly to ensure account safety.</p>
+                            <p class="card-text">Users are advised to update passwords regularly to ensure account
+                                safety.</p>
                         </div>
                     </div>
 
@@ -179,7 +198,8 @@
                             <i class="fa-solid fa-chevron-down accordion-icon"></i>
                         </button>
                         <div class="accordion-content">
-                            <p class="card-text">Complaint response times have been reduced with the new tracking system.</p>
+                            <p class="card-text">Complaint response times have been reduced with the new tracking
+                                system.</p>
                         </div>
                     </div>
 
@@ -205,16 +225,21 @@
                             <i class="fa-solid fa-chevron-down accordion-icon"></i>
                         </button>
                         <div class="accordion-content">
-                            <p class="card-text">New policies have been introduced. Please review them in the policy section.</p>
+                            <p class="card-text">New policies have been introduced. Please review them in the policy
+                                section.</p>
                         </div>
                     </div>
+                </div>
+
+                <div style="text-align: center; margin: 25px 0;">
+                    <button type="button" onclick="showSection('special-notices')" class="btn btn-orange btn-glow" style="font-size: 1rem; padding: 12px 25px; border: none; cursor: pointer; background-color: #3b82f6; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);">Special Notice</button>
                 </div>
 
                 <script>
                     function toggleAccordion(button) {
                         const allContents = document.querySelectorAll('.accordion-content');
                         const allButtons = document.querySelectorAll('.accordion-header');
-                        
+
                         // Close all other open items
                         allContents.forEach(content => {
                             if (content !== button.nextElementSibling) {
@@ -238,9 +263,10 @@
             </div>
         </section>
 
-        <section class="special-notices-section" id="special-notices" style="padding: 60px 0; background-color: transparent;">
+        <section class="special-notices-section" id="special-notices"
+            style="padding: 20px 0; margin-top: 20px; background-color: transparent; scroll-margin-top: 150px;">
             <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-                <div class="section-header text-center" style="margin-bottom: 40px;">
+                <div class="section-header text-center" style="margin-bottom: 25px;">
                     <h3
                         style="color: #1e3a8a; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">
                         SPECIAL NOTICE</h3>
@@ -259,7 +285,7 @@
                     </button>
                 </div>
 
-                <div class="special-notices-content">
+                <div class="special-notices-content" style="min-height: 650px;">
                     <!-- Column 1: Quota -->
                     <div class="notice-pane active" id="notice-0">
                         <div class="table-card">
@@ -434,6 +460,12 @@
                     </div>
                 </div>
 
+                <div style="text-align: center; margin-top: 40px;">
+                    <button type="button" onclick="showSection('important-notices')" class="btn btn-orange btn-glow"
+                        style="font-size: 1.1rem; padding: 15px 30px; border: none; cursor: pointer;">Important
+                        Notice</button>
+                </div>
+
                 <script>
                     function showNotice(index) {
                         document.querySelectorAll('.notice-tab').forEach(t => t.classList.remove('active'));
@@ -521,6 +553,30 @@
         }
         function closeChat() {
             document.getElementById('chatModal').classList.remove('active');
+        }
+
+        function showSection(sectionId) {
+            // Hide the other section
+            if (sectionId === 'important-notices') {
+                document.getElementById('important-notices').style.display = 'block';
+                document.getElementById('special-notices').style.display = 'none';
+            } else if (sectionId === 'special-notices') {
+                document.getElementById('important-notices').style.display = 'none';
+                document.getElementById('special-notices').style.display = 'block';
+            }
+
+            // Smooth scroll with proper offset to avoid header overlap
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                const headerOffset = 150;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }, 50);
         }
     </script>
 </body>
