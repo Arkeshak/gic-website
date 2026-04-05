@@ -1462,6 +1462,20 @@ header {
     background-color: #f8fafc;
 }
 
+.faq-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #fafafa;
+}
+
+.faq-answer {
+    padding: 0 30px 24px 30px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* -------------------------------------- */
 /* Responsive Design Section              */
 /* -------------------------------------- */
@@ -1567,8 +1581,26 @@ header {
     }
     
     .footer-inner {
-        gap: 15px;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px 12px;
+        justify-items: center;
+        width: 100%;
+    }
+    
+    .footer-inner a:nth-child(4),
+    .footer-inner a:nth-child(5) {
+        grid-row: 2;
+    }
+
+    .footer-inner a:nth-child(4) {
+        grid-column: 1 / span 1.5;
+        justify-self: right;
+    }
+    
+    .footer-inner a:nth-child(5) {
+        grid-column: 2 / span 2;
+        justify-self: left;
     }
     
     .footer-inner a {
