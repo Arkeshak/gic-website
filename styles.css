@@ -233,12 +233,8 @@ header {
     border-color: var(--yellow);
 }
 
-/* Main Content & Grid Background */
+/* Main Content */
 .main-content {
-    background-image: 
-        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-    background-size: 60px 60px;
     min-height: calc(100vh - 120px);
     padding-bottom: 150px; /* extra padding for sticky footer */
 }
@@ -246,6 +242,20 @@ header {
 /* Hero Section */
 .hero-section {
     padding: 60px 20px 40px;
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(253, 253, 253, 0.50), rgba(253, 253, 253, 0.85)), 
+        url('fuel-pump-image.jpg');
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+[data-theme="dark"] .hero-section {
+    background-image: 
+        linear-gradient(rgba(31, 41, 55, 0.50), rgba(31, 41, 55, 0.85)), 
+        url('fuel-pump-image.jpg');
 }
 
 .status-indicator {
