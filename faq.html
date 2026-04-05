@@ -13,7 +13,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="sticky-header">
+        <div class="logo-bar">
+            <div class="container logo-bar-inner" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png" alt="Sri Lanka Emblem" class="emblem">
+                    <div class="logo-text">
+                        <h1>GIC</h1>
+                        <p>SRI LANKA</p>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <button class="btn-icon-outline"><i class="fa-regular fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
         <div class="top-bar">
             <div class="container top-bar-inner">
                 <div class="top-bar-left">
@@ -32,28 +46,13 @@
                 </div>
             </div>
         </div>
-        <div class="logo-bar">
-            <div class="container logo-bar-inner" style="display: flex; justify-content: space-between; align-items: center;">
-                <div class="logo-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png" alt="Sri Lanka Emblem" class="emblem">
-                    <div class="logo-text">
-                        <h1>GIC</h1>
-                        <p>SRI LANKA</p>
-                    </div>
-                </div>
-                <div class="theme-toggle">
-                    <button class="btn-icon-outline"><i class="fa-regular fa-moon"></i></button>
-                </div>
-            </div>
-        </div>
     </header>
 
     <main class="main-content faq-page-bg">
         <div class="container faq-container">
+            <a href="index.html" class="btn-back-top"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
             <!-- Header elements of FAQ page -->
             <div class="faq-header text-center">
-                <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
-                
                 <div class="status-indicator">
                     <div class="badge-pill">
                         <span class="dot-green"></span> Help Center
@@ -67,63 +66,139 @@
             <!-- FAQ List -->
             <div class="faq-list">
                 <div class="faq-item">
-                    <span class="faq-text">1. Registered customer with valid CR (Certificate of Registration) + NIC + Revine Revenue license</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">1. Registered customer with valid CR (Certificate of Registration) + NIC + Revine Revenue license</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">Once your details are verified on our platform, you will successfully receive your specific QR code to continue with fuel distribution.</p>
+                    </div>
                 </div>
                 
                 <div class="faq-item">
-                    <span class="faq-text">2. Unable to register a vehicle that is under a leasing company for a Fuel QR.</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">2. Unable to register a vehicle that is under a leasing company for a Fuel QR.</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">If the vehicle is leased, you must provide a 'No Objection Letter' from the leasing company uploaded during registration to receive the QR.</p>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <span class="faq-text">3. The QR code cannot be scanned at the fuel station and appears as blocked.</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">3. The QR code cannot be scanned at the fuel station and appears as blocked.</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">QR codes may be blocked automatically due to irregular transaction patterns or reported fraud. Please call the hotline 1919 for unblocking assistance.</p>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <span class="faq-text">4. QR code or vehicle details cannot be verified in the system.</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">4. QR code or vehicle details cannot be verified in the system.</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">Please cross-reference your Chassis Number and Engine Number directly with the Department of Motor Traffic (DMT) records to ensure accuracy.</p>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <span class="faq-text">5. A three-wheel vehicle has a quota of 15L, but the QR code shows only 14L.</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">5. A three-wheel vehicle has a quota of 15L, but the QR code shows only 14L.</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">Variations in quota limits are applied contextually based on recent fuel consumption habits and ongoing quota resets. This balances out on the next cycle.</p>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <span class="faq-text">6. When logging in with the previous contact number, the system shows "Contact number not found or not valid."</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">6. When logging in with the previous contact number, the system shows "Contact number not found or not valid."</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">This typically means the phone number was disassociated after prolonged inactivity or transferred. Re-register completely with your active mobile number.</p>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <span class="faq-text">7. Registration fails with the message: "This service is experiencing a temporary interruption. Please try again later."</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">7. Registration fails with the message: "This service is experiencing a temporary interruption. Please try again later."</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">This is due to high traffic volumes or server maintenance. Please wait at least 30 minutes before attempting to register again.</p>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <span class="faq-text">8. How can 48cc unregistered motorcycles obtain a QR code?</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">8. How can 48cc unregistered motorcycles obtain a QR code?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">Unregistered low-capacity motorcycles should register via the Divisional Secretariat using their specialized non-motor traffic forms.</p>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <span class="faq-text">9. Logging in with a new contact number shows "Contact number not found or not valid."</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">9. Logging in with a new contact number shows "Contact number not found or not valid."</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">New contact numbers must be approved through an OTP verification. If you skipped this step, go to "Reset Phone Number" to link the number correctly.</p>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <span class="faq-text">10. The NIC number has not been registered before, but the system shows it as already...</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <button class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
+                        <span class="faq-text">10. The NIC number has not been registered before, but the system shows it as already...</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p class="faq-answer">Someone else might have accidentally initiated a profile with your NIC. Submit a claim through the portal to verify your physical NIC and reclaim your profile.</p>
+                    </div>
                 </div>
+            </div>
+
+            <script>
+                function toggleFaqAccordion(button) {
+                    const allContents = document.querySelectorAll('.faq-accordion-content');
+                    const allButtons = document.querySelectorAll('.faq-accordion-header');
+                    
+                    allContents.forEach(content => {
+                        if (content !== button.nextElementSibling) {
+                            content.style.maxHeight = null;
+                        }
+                    });
+                    
+                    allButtons.forEach(btn => {
+                        if (btn !== button) btn.classList.remove('active');
+                    });
+
+                    button.classList.toggle('active');
+                    const content = button.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                }
+            </script>
+
+            <div class="btn-back-bottom-container">
+                <a href="index.html" class="btn-back-bottom"><i class="fa-solid fa-house"></i> Back to Home</a>
             </div>
         </div>
     </main>
 
-    <div class="chat-float">
-        <button class="btn-chat" onclick="openChat()">
-            <i class="fa-solid fa-comments"></i> Chat with GIC1919
-        </button>
-    </div>
+
 
     <!-- Chat Modal -->
     <div class="chat-modal-overlay" id="chatModal">
@@ -159,6 +234,16 @@
             </div>
         </div>
     </div>
+
+    <footer class="sticky-footer">
+        <div class="container footer-inner">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="faq.html"><i class="fa-regular fa-circle-question"></i> FAQ</a>
+            <a href="complaints.html"><i class="fa-solid fa-triangle-exclamation"></i> Complaints</a>
+            <a href="contact.html"><i class="fa-regular fa-file-lines"></i> Contact GIC</a>
+            <a href="#" onclick="openChat(); return false;"><i class="fa-solid fa-comments"></i> Chat with GIC</a>
+        </div>
+    </footer>
 
     <script>
         function openChat() {

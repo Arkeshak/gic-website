@@ -13,7 +13,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="sticky-header">
+        <div class="logo-bar">
+            <div class="container logo-bar-inner" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png" alt="Sri Lanka Emblem" class="emblem">
+                    <div class="logo-text">
+                        <h1>GIC</h1>
+                        <p>SRI LANKA</p>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <button class="btn-icon-outline"><i class="fa-regular fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
         <div class="top-bar">
             <div class="container top-bar-inner">
                 <div class="top-bar-left">
@@ -32,24 +46,11 @@
                 </div>
             </div>
         </div>
-        <div class="logo-bar">
-            <div class="container logo-bar-inner" style="display: flex; justify-content: space-between; align-items: center;">
-                <div class="logo-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png" alt="Sri Lanka Emblem" class="emblem">
-                    <div class="logo-text">
-                        <h1>GIC</h1>
-                        <p>SRI LANKA</p>
-                    </div>
-                </div>
-                <div class="theme-toggle">
-                    <button class="btn-icon-outline"><i class="fa-regular fa-moon"></i></button>
-                </div>
-            </div>
-        </div>
     </header>
 
     <main class="main-content complaint-page-layout">
         <div class="container complaint-container">
+            <a href="index.html" class="btn-back-top"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
             <div class="complaint-header text-center">
                 <h2 class="faq-main-title" style="margin-bottom: 25px;">Submit a Complaint</h2>
                 <p class="faq-subtitle" style="margin-bottom: 45px;">Use the button below to report fuel-related issues or grievances.</p>
@@ -65,8 +66,6 @@
                 <button class="btn-open-form">
                     <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem;"></i> Open Complaint Form
                 </button>
-                
-                <a href="index.html" class="btn-back-home text-center">Back to Home</a>
             </div>
 
             <!-- Privacy Policy Card -->
@@ -78,14 +77,14 @@
                     <p style="margin-top: 15px;">By sending your information, you consent to this process.</p>
                 </div>
             </div>
+
+            <div class="btn-back-bottom-container">
+                <a href="index.html" class="btn-back-bottom"><i class="fa-solid fa-house"></i> Back to Home</a>
+            </div>
         </div>
     </main>
 
-    <div class="chat-float">
-        <button class="btn-chat" onclick="openChat()">
-            <i class="fa-solid fa-comments"></i> Chat with GIC1919
-        </button>
-    </div>
+
 
     <!-- Chat Modal -->
     <div class="chat-modal-overlay" id="chatModal">
@@ -118,6 +117,16 @@
             </div>
         </div>
     </div>
+
+    <footer class="sticky-footer">
+        <div class="container footer-inner">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="faq.html"><i class="fa-regular fa-circle-question"></i> FAQ</a>
+            <a href="complaints.html"><i class="fa-solid fa-triangle-exclamation"></i> Complaints</a>
+            <a href="contact.html"><i class="fa-regular fa-file-lines"></i> Contact GIC</a>
+            <a href="#" onclick="openChat(); return false;"><i class="fa-solid fa-comments"></i> Chat with GIC</a>
+        </div>
+    </footer>
 
     <script>
         function openChat() {

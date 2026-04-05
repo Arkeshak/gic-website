@@ -16,7 +16,23 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky-header">
+        <div class="logo-bar">
+            <div class="container logo-bar-inner"
+                style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png"
+                        alt="Sri Lanka Emblem" class="emblem">
+                    <div class="logo-text">
+                        <h1>GIC</h1>
+                        <p>SRI LANKA</p>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <button class="btn-icon-outline"><i class="fa-regular fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
         <div class="top-bar">
             <div class="container top-bar-inner">
                 <div class="top-bar-left">
@@ -35,22 +51,6 @@
                 </div>
             </div>
         </div>
-        <div class="logo-bar">
-            <div class="container logo-bar-inner"
-                style="display: flex; justify-content: space-between; align-items: center;">
-                <div class="logo-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_Sri_Lanka.svg/200px-Emblem_of_Sri_Lanka.svg.png"
-                        alt="Sri Lanka Emblem" class="emblem">
-                    <div class="logo-text">
-                        <h1>GIC</h1>
-                        <p>SRI LANKA</p>
-                    </div>
-                </div>
-                <div class="theme-toggle">
-                    <button class="btn-icon-outline"><i class="fa-regular fa-moon"></i></button>
-                </div>
-            </div>
-        </div>
     </header>
 
     <main class="main-content">
@@ -65,133 +65,179 @@
                 process.</p>
 
             <div class="action-buttons">
-                <a href="faq.html" class="btn btn-orange btn-glow"><i class="fa-regular fa-circle-question"></i> FAQ</a>
-                <a href="complaints.html" class="btn btn-orange"><i class="fa-solid fa-triangle-exclamation"></i>
-                    COMPLAINTS</a>
-                <a href="contact.html" class="btn btn-orange"><i class="fa-regular fa-file-lines"></i> CONTACT GIC</a>
+                <a href="#important-notices" class="btn btn-orange" style="background-color: #3b82f6;"><i class="fa-solid fa-bell"></i> IMPORTANT NOTICE</a>
+                <a href="#special-notices" class="btn btn-orange" style="background-color: #3b82f6;"><i class="fa-solid fa-star"></i> SPECIAL NOTICE</a>
             </div>
         </section>
 
-        <section class="notices-section">
+        <section class="notices-section" id="important-notices">
             <div class="container">
                 <div class="section-header text-center">
                     <h3 class="section-title">IMPORTANT NOTICE</h3>
                     <div class="underline yellow-underline"></div>
                 </div>
 
-                <div class="cards-grid-wrapper">
-                    <div class="cards-grid" id="marqueeGrid">
-                        <div class="notice-card yellow-card" onclick="openNoticeModal(this)">
-                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT
-                                QUOTA RESET NOTICE</h4>
-                            <p class="card-text"><strong>Fuel Pass quotas will reset at 12:00 AM (midnight) on
-                                    Saturday.</strong></p>
-                        </div>
-
-                        <div class="notice-card yellow-card" onclick="openNoticeModal(this)">
-                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT
-                                NEW NOTICE</h4>
-                            <p class="card-text"><strong>Citizens with valid documents can view and remove the previous
-                                    owner's number to continue registration.</strong></p>
-                        </div>
-
-                        <div class="notice-card yellow-card" onclick="openNoticeModal(this)">
-                            <h4 class="card-title brown-text"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT
-                                SYSTEM USAGE NOTICE</h4>
-                            <p class="card-text"><strong>Misuse of the Fuel QR system, including fraudulent
-                                    registrations, will lead to strict legal action under the Computer Crimes
-                                    Act.</strong><br><br><span class="light-text">The public is advised to use only the
-                                    official website, as the updated system supports re-registration for ownership
-                                    changes and lost contact numbers.</span></p>
+                <div class="important-notice-accordion-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-clock accordion-title-icon"></i>
+                                <h4 class="notice-title">Quota Reset Notice</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">The system quota will reset at 12:00 AM on Saturday. Please complete pending actions before the reset.</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Important Notice Modal -->
-                <div class="notice-modal-overlay" id="importantNoticeModal">
-                    <div class="notice-modal">
-                        <div class="notice-modal-header">
-                            <button class="notice-modal-close" onclick="closeNoticeModal()"><i
-                                    class="fa-solid fa-xmark"></i></button>
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-address-card accordion-title-icon"></i>
+                                <h4 class="notice-title">New Registration Update</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">Users can now update registration details using valid documents through the new portal.</p>
                         </div>
-                        <div class="notice-modal-body" id="importantNoticeModalContent">
-                            <!-- Injected content -->
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-wrench accordion-title-icon"></i>
+                                <h4 class="notice-title">System Maintenance Notice</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">Scheduled maintenance will occur on Sunday from 1:00 AM to 4:00 AM.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-file-shield accordion-title-icon"></i>
+                                <h4 class="notice-title">Document Verification Update</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">Verification process has been improved for faster approval times.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-server accordion-title-icon"></i>
+                                <h4 class="notice-title">Service Availability Notice</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">Some services may be temporarily unavailable due to system upgrades.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-shield-halved accordion-title-icon"></i>
+                                <h4 class="notice-title">User Account Security Update</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">Users are advised to update passwords regularly to ensure account safety.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-mobile-screen accordion-title-icon"></i>
+                                <h4 class="notice-title">Mobile Access Improvement</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">The platform is now optimized for better mobile performance.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-headset accordion-title-icon"></i>
+                                <h4 class="notice-title">Complaint Handling Update</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">Complaint response times have been reduced with the new tracking system.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-language accordion-title-icon"></i>
+                                <h4 class="notice-title">Language Support Update</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">Additional language options are now available for user convenience.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title-container">
+                                <i class="fa-solid fa-file-contract accordion-title-icon"></i>
+                                <h4 class="notice-title">Policy Update Notice</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="card-text">New policies have been introduced. Please review them in the policy section.</p>
                         </div>
                     </div>
                 </div>
 
                 <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        const grid = document.getElementById('marqueeGrid');
-                        if (!grid) return;
-
-                        let isPaused = false;
-                        let scrollPos = 0; // Track precise scroll position
-
-                        // Disable CSS features that interfere with JS scrolling
-                        grid.style.scrollSnapType = 'none';
-                        grid.style.scrollBehavior = 'auto';
-
-                        function startAutoScroll() {
-                            if (!isPaused && grid) {
-                                // Use a precise internal counter instead of grid.scrollLeft directly
-                                scrollPos += 1;
-                                grid.scrollLeft = scrollPos;
-
-                                const firstCard = grid.firstElementChild;
-                                // Use getBoundingClientRect for sub-pixel accuracy to prevent jumpiness
-                                const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 0;
-                                const totalWidth = cardWidth + 20; // width + gap
-
-                                if (firstCard && scrollPos >= totalWidth) {
-                                    grid.appendChild(firstCard);
-                                    scrollPos -= totalWidth;
-                                    grid.scrollLeft = scrollPos;
-                                }
-                            } else if (grid && isPaused) {
-                                // Sync exact position if user scrolled manually while paused
-                                scrollPos = grid.scrollLeft;
+                    function toggleAccordion(button) {
+                        const allContents = document.querySelectorAll('.accordion-content');
+                        const allButtons = document.querySelectorAll('.accordion-header');
+                        
+                        // Close all other open items
+                        allContents.forEach(content => {
+                            if (content !== button.nextElementSibling) {
+                                content.style.maxHeight = null;
                             }
-                            requestAnimationFrame(startAutoScroll);
+                        });
+                        allButtons.forEach(btn => {
+                            if (btn !== button) btn.classList.remove('active');
+                        });
+
+                        // Toggle current item
+                        button.classList.toggle('active');
+                        const content = button.nextElementSibling;
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
                         }
-
-                        requestAnimationFrame(startAutoScroll);
-
-                        grid.addEventListener('mouseenter', () => isPaused = true);
-                        grid.addEventListener('mouseleave', () => {
-                            isPaused = false;
-                            scrollPos = grid.scrollLeft;
-                        });
-                        grid.addEventListener('touchstart', () => isPaused = true);
-                        grid.addEventListener('touchend', () => {
-                            setTimeout(() => {
-                                isPaused = false;
-                                scrollPos = grid.scrollLeft;
-                            }, 2000);
-                        });
-
-                        window.openNoticeModal = function (cardElement) {
-                            isPaused = true;
-                            const modal = document.getElementById('importantNoticeModal');
-                            const modalContent = document.getElementById('importantNoticeModalContent');
-                            modalContent.innerHTML = cardElement.innerHTML;
-                            modal.classList.add('active');
-                        };
-
-                        window.closeNoticeModal = function () {
-                            const modal = document.getElementById('importantNoticeModal');
-                            modal.classList.remove('active');
-                            setTimeout(() => {
-                                isPaused = false;
-                                scrollPos = grid.scrollLeft;
-                            }, 500);
-                        };
-                    });
+                    }
                 </script>
             </div>
         </section>
 
-        <section class="special-notices-section" style="padding: 60px 0; background-color: transparent;">
+        <section class="special-notices-section" id="special-notices" style="padding: 60px 0; background-color: transparent;">
             <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
                 <div class="section-header text-center" style="margin-bottom: 40px;">
                     <h3
@@ -399,11 +445,7 @@
         </section>
     </main>
 
-    <div class="chat-float">
-        <button class="btn-chat" onclick="openChat()">
-            <i class="fa-solid fa-comments"></i> Chat with GIC1919
-        </button>
-    </div>
+
 
     <!-- Chat Modal -->
     <div class="chat-modal-overlay" id="chatModal">
@@ -459,6 +501,16 @@
             </div>
         </div>
     </div>
+
+    <footer class="sticky-footer">
+        <div class="container footer-inner">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="faq.html"><i class="fa-regular fa-circle-question"></i> FAQ</a>
+            <a href="complaints.html"><i class="fa-solid fa-triangle-exclamation"></i> Complaints</a>
+            <a href="contact.html"><i class="fa-regular fa-file-lines"></i> Contact GIC</a>
+            <a href="#" onclick="openChat(); return false;"><i class="fa-solid fa-comments"></i> Chat with GIC</a>
+        </div>
+    </footer>
 
     <script>
         function openChat() {
