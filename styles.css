@@ -695,33 +695,7 @@ header {
     width: 100%;
 }
 
-@media (max-width: 900px) {
-    .sticky-footer {
-        padding: 12px 25px;
-    }
-    .footer-inner {
-        gap: 20px;
-    }
-    .footer-inner a {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .sticky-footer {
-        width: calc(100% - 30px);
-        bottom: 15px;
-        padding: 12px 15px;
-        border-radius: 16px; 
-    }
-    .footer-inner {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    .footer-inner a::after {
-        display: none; 
-    }
-}
+/* Note: Media queries moved to Responsive Section at bottom of file */
 
 /* Back to Home Buttons */
 .btn-back-top {
@@ -769,36 +743,7 @@ header {
 }
 
 /* Responsive adjustments */
-@media (max-width: 992px) {
-    .notice-card {
-        flex: 0 0 calc(85% - 20px);
-    }
-    .table-card {
-        flex: 0 0 calc(90% - 30px);
-    }
-}
-
-@media (max-width: 768px) {
-    .main-title {
-        font-size: 2.2rem;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-    }
-    
-    .top-bar-inner {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
+/* Mobile adjustments moved to bottom */
 
 /* -------------------------------------- */
 /* Complaints Page Specific Styles        */
@@ -1517,36 +1462,153 @@ header {
     background-color: #f8fafc;
 }
 
-.faq-text {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1a365d;
-    padding-right: 20px;
-    line-height: 1.5;
+/* -------------------------------------- */
+/* Responsive Design Section              */
+/* -------------------------------------- */
+
+/* Tablet & Mobile (Standard: 992px) */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo-bar-inner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .special-notices-tabs {
+        gap: 10px;
+    }
+    
+    .notice-tab {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
 }
 
-.faq-icon {
-    color: #9ca3af;
-    font-size: 0.9rem;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 15px;
-    text-align: right;
+/* Small Tablet & Mobile (768px) */
+@media (max-width: 768px) {
+    .top-bar-inner {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 0;
+    }
+    
+    .top-bar-left, .top-bar-right {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+
+    .important-notice-accordion-container {
+        height: 350px;
+        padding: 15px;
+    }
+
+    .accordion-header {
+        padding: 15px;
+    }
+
+    .accordion-header .notice-title {
+        font-size: 0.95rem;
+    }
+
+    .accordion-content .card-text {
+        padding-left: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .complaint-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .faq-accordion-header {
+        padding: 20px;
+    }
+    
+    .faq-text {
+        font-size: 0.95rem;
+    }
 }
 
-.faq-accordion-header.active .faq-icon {
-    transform: rotate(180deg);
+/* Large Mobile (600px) */
+@media (max-width: 600px) {
+    .sticky-footer {
+        width: calc(100% - 30px);
+        bottom: 20px;
+        padding: 12px 15px;
+        border-radius: 16px;
+    }
+    
+    .footer-inner {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-inner a {
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+    
+    .footer-inner a::after {
+        display: none;
+    }
+
+    /* Floating Pill Hover on Mobile */
+    .sticky-footer:hover {
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
-.faq-accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #fafafa;
-}
-
-.faq-answer {
-    padding: 0 30px 24px 30px;
-    color: #4b5563;
-    line-height: 1.6;
-    margin: 0;
+/* Very Small Devices (375px) */
+@media (max-width: 375px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .logo-img {
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    .footer-inner {
+        gap: 10px;
+    }
+    
+    .footer-inner a {
+        font-size: 0.75rem;
+    }
+    
+    .footer-inner a i {
+        font-size: 1rem;
+    }
 }
